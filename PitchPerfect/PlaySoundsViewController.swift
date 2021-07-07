@@ -53,7 +53,7 @@ class PlaySoundsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        setupAudio()
+        setupAudio()
 
         // Do any additional setup after loading the view.
     }
