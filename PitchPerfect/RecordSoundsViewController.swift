@@ -16,8 +16,6 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     @IBOutlet weak var recordingButton: UIButton!
     @IBOutlet weak var stopRecordingButton: UIButton!
     
-    var testFork: String
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         stopRecordingButton.isEnabled = false
@@ -63,6 +61,10 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         } else {
             print("Recording was not succesfull")
         }
+    }
+    
+    func test(){
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
