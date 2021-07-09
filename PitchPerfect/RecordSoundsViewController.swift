@@ -26,13 +26,11 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         super.viewWillAppear(animated)
     }
     
-    
     func setButtonStatus(recordingLabel: String, recordingButton: Bool, stopRecordingButton: Bool){
         self.recordingLabel.text = recordingLabel
         self.stopRecordingButton.isEnabled = stopRecordingButton
         self.recordingButton.isEnabled = recordingButton
     }
-    
     
     @IBAction func recordButton(_ sender: Any) {
         setButtonStatus(recordingLabel: "Recording in progress", recordingButton: false, stopRecordingButton: true)
@@ -50,15 +48,13 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         audioRecorder.record()
     }
     
-
     @IBAction func stopRecordingButton(_ sender: Any) {
         setButtonStatus(recordingLabel: "Tap to record", recordingButton: true, stopRecordingButton: false)
         audioRecorder.stop()
         let audioSession = AVAudioSession.sharedInstance()
         try! audioSession.setActive(false)
     }
-    
-    
+        
     func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
         print("Finish recording")
         if flag {
@@ -67,7 +63,6 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
             print("Recording was not succesfull")
         }
     }
-    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "stopRecording" {
