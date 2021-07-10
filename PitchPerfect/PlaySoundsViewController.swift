@@ -29,7 +29,7 @@ class PlaySoundsViewController: UIViewController {
 
     enum ButtonType: Int {case slow = 0, fast, chipmunk, vader, echo, reverb}
     
-    @IBAction func playSoundForButton(_ sender: UIButton) {
+    @IBAction func playSoundForButton(_ sender: UIButton) {        
         switch(ButtonType(rawValue: sender.tag)!) {
             case .slow:
                 playSound(rate: 0.5)
@@ -58,19 +58,7 @@ class PlaySoundsViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        stopButton.imageView?.contentMode = .scaleAspectFit
         configureUI(.notPlaying)
     }
-
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

@@ -16,15 +16,6 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     @IBOutlet weak var recordingButton: UIButton!
     @IBOutlet weak var stopRecordingButton: UIButton!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        stopRecordingButton.isEnabled = false
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-    }
-    
     func setButtonStatus(recordingLabel: String, recordingButton: Bool, stopRecordingButton: Bool){
         self.recordingLabel.text = recordingLabel
         self.stopRecordingButton.isEnabled = stopRecordingButton
@@ -61,10 +52,6 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         } else {
             print("Recording was not succesfull")
         }
-    }
-    
-    func test(){
-        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
